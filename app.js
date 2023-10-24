@@ -5,9 +5,10 @@ const http = require('http')
 const server = http.createServer(app)
 const io = require('socket.io')(server)
 const port = '5500'
-
+  
 // arquivos estaticos
 app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/src'))
 
 // socket
 io.on('connection', socket => {

@@ -9,17 +9,50 @@
     <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-    <main>
-        <canvas id="canva"></canvas>
-        <div>
-            <input type="color" name="colorPicker" id="colorPicker">
-            <input type="text" name="anwser" id="anwser">
-            <button class="send">enviar</button>
+    <div class="box-wrapper">
+      <div class="box-wrapper__options">
+        <img src="logo.png" class="logo" alt="Logo do garlic">
+      </div>
+
+      <div class="box-wrapper__game">
+        <div class="game__players">
+          <div class="player">
+            <div class="player__photo"></div>
+            <div class="player__infos">
+              <p>Akira</p>
+              <p>0 pontos</p>
+            </div>
+          </div>
+          <div class="player">
+            <div class="player__photo"></div>
+            <div class="player__infos">
+              <p>Thay</p>
+              <p>0 pontos</p>
+            </div>
+          </div>
+          <div class="player">
+            <div class="player__photo"></div>
+            <div class="player__infos">
+              <p>Paulo</p>
+              <p>0 pontos</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="game__options">
+          <canvas id="canva" class="game__screen"></canvas>
+
+          <div class="anwser-chat">
             <div class="anwserContainer">
                 <ul></ul>
             </div>
+            <input type="text" class="chat__input" name="anwser" id="anwser" placeholder="Digite sua resposta">
+          </div>
+          
+          <input type="color" class="hidden" name="colorPicker" id="colorPicker">
         </div>
-    </main>
+      </div>
+    </div>
 <script src="./script.js"></script>
 </body>
 </html>
