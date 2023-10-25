@@ -1,0 +1,149 @@
+:root{
+  --main-container-bg: #005cc8;
+  --players-bg: #0064dc;
+  --main-border: #42a4ff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body{
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+p, li, span{
+  font-size: 1.6rem;
+}
+
+input:focus{
+  outline: none;
+}
+
+/* esconder elementos */
+.hidden{
+  display: none;
+}
+
+/* logo */
+.logo{
+  width: 12rem;
+}
+
+/* ferramentas */
+.tools{
+  color: #fff;
+  cursor: pointer;
+}
+
+.tools > svg{
+  color: #ffff;
+  fill: #ffffff;
+}
+
+/* container do jogo */
+.box-wrapper__game{
+  display: flex;
+  background-color: var(--main-container-bg);
+  border-radius: 1rem;
+  overflow: hidden;
+
+}
+
+.game__options{
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+#canva{
+  height: 40rem;
+  max-height: 40rem;
+  border-radius: 1rem;
+  background-color: #ffffff;
+}
+
+/* chat */
+.anwser-chat{
+  width: 50%;
+}
+
+.anwserContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 1rem;
+}
+
+.anwserContainer::-webkit-scrollbar-thumb {
+  background: #004BAE;
+  border-radius: 1rem;
+}
+
+.anwserContainer::-webkit-scrollbar{
+  width: 1rem;
+}
+.anwserContainer{
+  height: 20rem;
+  max-height: 30rem;
+  overflow-y: scroll;
+}
+
+.anwserContainer ul li {
+  color: #fff;
+}
+
+.chat__input{
+  box-sizing:border-box;
+  border: 1px solid var(--main-border);
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: transparent;
+  color: #ffffff;
+  user-select: none;
+  width: 100%;
+}
+
+.chat__input::placeholder{
+  color: var(--main-border);
+}
+
+/* player */
+.game__players{
+  padding: 0 2rem;
+  background-color: var(--players-bg);
+  min-width: 18rem;
+}
+
+.game__players .player{
+  display: flex;
+  gap: 1rem;
+  box-sizing: border-box;
+  padding: 1rem 0;
+}
+
+.game__players .player:not(:last-child){
+  border-bottom: 1px solid #fff;
+}
+
+.game__players .player__photo{
+  border-radius: 100%;
+  height: 5rem;
+  width: 5rem;
+  background-color: #ccc;
+}
+
+.game__players .player__infos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: #ffffff;
+}

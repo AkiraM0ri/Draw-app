@@ -12,13 +12,14 @@ app.use(express.static(__dirname + '/src'))
 
 // socket
 io.on('connection', socket => {
-    console.log(socket.id)
-    socket.on('disconnect', () => {console.log('desconectou')});
+  console.log(socket.id)
+  socket.on('disconnect', () => {console.log('desconectou')});
 
-    socket.on('msg', msg => { io.emit('msg', msg) });
-    socket.on('drawing', line => { io.emit('drawing', line) });
-    socket.on('lineWidth', lineWidth => { io.emit('lineWidth', lineWidth) });
-    socket.on('color', color => { io.emit('colorRes', color) });
+  socket.on('newUser', user => { io.emit('newUser', {[user]: socket.id}) });
+  socket.on('msg', msg => { io.emit('msg', msg) });
+  socket.on('drawing', line => { io.emit('drawing', line) });
+  socket.on('lineWidth', lineWidth => { io.emit('lineWidth', lineWidth) });
+  socket.on('color', color => { io.emit('colorRes', color) });
 });
 
 // server
