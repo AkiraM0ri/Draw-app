@@ -17,6 +17,7 @@ io.on('connection', socket => {
 
     socket.on('msg', msg => { io.emit('msg', msg) });
     socket.on('drawing', line => { io.emit('drawing', line) });
+    socket.on('lineWidth', lineWidth => { io.emit('lineWidth', lineWidth) });
     socket.on('color', color => { io.emit('colorRes', color) });
 });
 
